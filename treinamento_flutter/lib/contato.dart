@@ -2,7 +2,7 @@ class Contato{
   String Guid;
   String nome;
   String sobreNome;
-  DateTime nascimento;
+  DateTime nascimento = DateTime.now();
   int idade;
   int peso;
   String email;
