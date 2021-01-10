@@ -25,7 +25,7 @@ class ContactModal extends StatelessWidget {
               CircleAvatar(
                 radius: 110,
               ),
-              Si
+              SimpleDialog(),
             ],
           ),
         ),

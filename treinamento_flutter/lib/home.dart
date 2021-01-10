@@ -15,8 +15,6 @@ class _HomeAppState extends State<HomeApp> {
 
   ContatoService contatoService = ContatoService();
 
-  
-
   @override
   void initState() {
     super.initState();
@@ -31,11 +29,12 @@ class _HomeAppState extends State<HomeApp> {
           itemCount: user.length,
           itemBuilder: (context, index) {
             return InkWell(
-              onTap: (){
-              Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ContactModal(user, index)));
-              
-          },
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ContactModal(user, index)));
+              },
               child: ListTile(
                 leading: CircleAvatar(
                   radius: 24,
