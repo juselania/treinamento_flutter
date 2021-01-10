@@ -11,13 +11,11 @@ class HomeApp extends StatefulWidget {
 }
 
 class _HomeAppState extends State<HomeApp> {
-List<Contato> user = [];
+  List<Contato> user = [];
 
   ContatoService contatoService = ContatoService();
 
-  openContact(){
-    Navigator.push(context, MaterialPageRoute(builder:(context)=>ContactHome()));
-  }
+  
 
   @override
   void initState() {
@@ -33,7 +31,11 @@ List<Contato> user = [];
           itemCount: user.length,
           itemBuilder: (context, index) {
             return InkWell(
-              onTap: openContact,
+              onTap: (){
+              Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ContactModal(user, index)));
+              
+          },
               child: ListTile(
                 leading: CircleAvatar(
                   radius: 24,
