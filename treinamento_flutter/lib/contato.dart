@@ -1,10 +1,13 @@
 import 'dart:math';
 
+import 'package:uuid/uuid.dart';
+
 class Contato {
-  int guid = Random().nextInt(100);
+  
+  final String guid = Uuid().v1();
   String nome;
   String sobreNome;
-  DateTime nascimento = DateTime.now();
+  DateTime nascimento;
   int idade;
   int peso;
   String email;
@@ -16,6 +19,6 @@ class Contato {
       this.idade,
       this.peso,
       this.email,
-      this.telefone,
-      this.guid});
+      this.telefone
+  });
 }
