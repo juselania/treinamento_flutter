@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:treinamento_flutter/contato.dart';
-import 'package:treinamento_flutter/contatoservice.dart';
 import 'package:treinamento_flutter/home.dart';
 
 void main() => runApp(MyApp());

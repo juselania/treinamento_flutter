@@ -1,9 +1,6 @@
-import 'dart:math';
-
 import 'package:uuid/uuid.dart';
 
 class Contato {
-  
   final String guid = Uuid().v1();
   String nome;
   String sobreNome;

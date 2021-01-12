@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:treinamento_flutter/contato.dart';
+import 'package:treinamento_flutter/contact.dart';
+
 import 'package:treinamento_flutter/contatoservice.dart';
 import 'package:treinamento_flutter/main.dart';
 
-import 'models/contact.dart';
+
+import 'models/contato.dart';
 
 class HomeApp extends StatefulWidget {
   @override

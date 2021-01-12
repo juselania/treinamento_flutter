@@ -1,9 +1,9 @@
 import 'dart:math';
 
-import 'package:treinamento_flutter/contato.dart';
+import 'models/contato.dart';
 
 class ContatoService {
-  int max = 50;
+  final int max = 50;
   var random = Random();
   var nome = ['Mário', 'Luigi', 'Wario', 'Peach', 'Filipe'];
   var sobreNome = ['Dias', 'Fernandes', 'Castro', 'Souza', 'Deschamps'];
@@ -23,23 +23,28 @@ class ContatoService {
     "heloiza_89@gmail.com",
     "flilipedsh@outlook.com.br",
   ];
-  int nasc(int min, int max, int) => min + random.nextInt(1990 - 2000);
+
+  int numeroAleatorio(int min, int max) {
+    return min + random.nextInt(max - min);
+  }
 
   List<Contato> userList = [];
   List<Contato> getAll() {
     for (int i = 0; i < max; i++) {
       var primeiroNome = nome[random.nextInt(nome.length)];
       var sobrenome = sobreNome[random.nextInt(sobreNome.length)];
+      DateTime aniversario = new DateTime(numeroAleatorio(1500, 2020),
+          numeroAleatorio(1, 12), numeroAleatorio(1, 30));
+      var idades = DateTime.now().year - aniversario.year;
+      var kg = numeroAleatorio(24, 190);
 
-      var idades = random.nextInt(90);
-      var kg = random.nextInt(100);
-      Contato usuario = new Contato(
+      Contato usuario = Contato(
         nome: '$primeiroNome $sobrenome',
+        nascimento: aniversario,
         idade: idades,
         peso: kg,
         telefone: telefones[random.nextInt(telefones.length)],
         email: emails[random.nextInt(emails.length)],
-        //nascimento: nasc[random.nextInt(nasc.length)],
       );
       userList.add(usuario);
     }

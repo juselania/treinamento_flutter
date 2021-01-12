@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:treinamento_flutter/contato.dart';
-import 'package:treinamento_flutter/contatoservice.dart';
-import 'package:treinamento_flutter/home.dart';
+import 'models/contato.dart';
 
 class ContactModal extends StatelessWidget {
   List<Contato> user = [];
