@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'models/contato.dart';
 
 class ContatoService {

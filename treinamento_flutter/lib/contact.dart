@@ -15,6 +15,7 @@ class ContactModal extends StatelessWidget {
         backgroundColor: Colors.grey[100],
         elevation: 0,
         title: Text(user[index].nome, style: TextStyle(color: Colors.black)),
+        
       ),
       body: Center(
         child: Container(

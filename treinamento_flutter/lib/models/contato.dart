@@ -11,14 +11,9 @@ class Contato {
   String telefone;
 
   String get inicial {
-    var iniciais = nome.split(' ');
-    for (var i = 0; i < iniciais.length; i++) {
-      var palavra = iniciais[i];
-      print(palavra.substring(0, 1));
-      return nome[0]+sobreNome[0];
-    }
+  String iniciais = nome.split(' ').map((e) => e.substring(0,1)).join('').substring(0,2).toUpperCase();
+    return iniciais;
   }
-  
 
   Contato(
       {this.nome,

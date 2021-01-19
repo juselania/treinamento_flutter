@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:treinamento_flutter/contact.dart';
 import 'package:treinamento_flutter/contatoservice.dart';
 import 'models/contato.dart';
+import 'package:random_color/random_color.dart';
+
+//ContatoService contatoService = GetIt<ContatoService>();
 
 class HomeApp extends StatefulWidget {
   @override
@@ -9,6 +12,7 @@ class HomeApp extends StatefulWidget {
 }
 
 class _HomeAppState extends State<HomeApp> {
+  
   List<Contato> user = [];
 
   ContatoService contatoService = ContatoService();
@@ -26,7 +30,9 @@ class _HomeAppState extends State<HomeApp> {
         child: ListView.builder(
           itemCount: user.length,
           itemBuilder: (context, index) {
-            Divider(color: Colors.black,);
+            Divider(
+              color: Colors.black,
+            );
             return InkWell(
               onTap: () {
                 Navigator.push(
@@ -36,12 +42,14 @@ class _HomeAppState extends State<HomeApp> {
               },
               child: ListTile(
                 leading: CircleAvatar(
+                  child: Text(
+                    user[index].inicial,
+                  ),
                   radius: 24,
-                  backgroundColor: Colors.grey[400],
+                  // backgroundColor: Colors.grey[400],
                 ),
                 title: Text(user[index].nome),
                 subtitle: Text(user[index].telefone),
-              
               ),
             );
           },
