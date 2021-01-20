@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:treinamento_flutter/contact.dart';
 import 'package:treinamento_flutter/contatoservice.dart';
 import 'models/contato.dart';
-import 'package:random_color/random_color.dart';
 
 //ContatoService contatoService = GetIt<ContatoService>();
 
@@ -12,11 +11,8 @@ class HomeApp extends StatefulWidget {
 }
 
 class _HomeAppState extends State<HomeApp> {
-  
   List<Contato> user = [];
-
   ContatoService contatoService = ContatoService();
-
   @override
   void initState() {
     super.initState();
