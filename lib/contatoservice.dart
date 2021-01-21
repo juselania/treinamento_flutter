@@ -6,7 +6,7 @@ class ContatoService {
   var random = Random();
   var nome = ['Mário', 'Luigi', 'Wario', 'Peach', 'Filipe'];
   var sobreNome = ['Dias', 'Fernandes', 'Castro', 'Souza', 'Deschamps'];
-  var telefones = ['71 12345678', '71 11112222', '71 33334444', '71 55556666'];
+  var telefones = ['71 12345678', '81 11112222', '11 33334444', '14 55556666'];
   var emails = [
     'teste123@gmail.com',
     'dartteste123@gmail.com',
@@ -32,7 +32,7 @@ class ContatoService {
     for (int i = 0; i < max; i++) {
       var primeiroNome = nome[random.nextInt(nome.length)];
       var sobrenome = sobreNome[random.nextInt(sobreNome.length)];
-      DateTime aniversario = new DateTime(numeroAleatorio(1500, 2020),
+      DateTime aniversario = new DateTime(numeroAleatorio(1982, 2015),
           numeroAleatorio(1, 12), numeroAleatorio(1, 30));
       var idades = DateTime.now().year - aniversario.year;
       var kg = numeroAleatorio(24, 190);
