@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:treinamento_flutter/contact.dart';
 import 'package:treinamento_flutter/contatoservice.dart';
+import 'package:treinamento_flutter/service_locator.dart';
 import 'models/contato.dart';
 
 //ContatoService contatoService = GetIt<ContatoService>();
@@ -11,6 +12,7 @@ class HomeApp extends StatefulWidget {
 }
 
 class _HomeAppState extends State<HomeApp> {
+  var produto = servicelocator<Contato>();
   List<Contato> user = [];
   ContatoService contatoService = ContatoService();
   //var serviceLocator = GetIt.I();
