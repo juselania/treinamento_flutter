@@ -9,6 +9,7 @@ class Contato {
   int peso;
   String email;
   String telefone;
+  var colors;
 
   String get inicial {
   String iniciais = nome.split(' ').map((e) => e.substring(0,1)).join('').substring(0,2).toUpperCase();
@@ -21,5 +22,6 @@ class Contato {
       this.idade,
       this.peso,
       this.email,
-      this.telefone});
+      this.telefone,
+      this.colors});
 }

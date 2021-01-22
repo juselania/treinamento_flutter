@@ -7,7 +7,6 @@ import 'contatoservice.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   GetIt.I.registerSingleton<ContatoService>(ContatoService());
-  ContatoService();
   runApp(MyApp());
 }
 

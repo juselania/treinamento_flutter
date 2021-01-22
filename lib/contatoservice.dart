@@ -23,6 +23,7 @@ class ContatoService {
     "flilipedsh@outlook.com.br",
   ];
 
+  var cores = ['blue','red','pink', 'yellow'];
   int numeroAleatorio(int min, int max) {
     return min + random.nextInt(max - min);
   }
@@ -44,6 +45,7 @@ class ContatoService {
         peso: kg,
         telefone: telefones[random.nextInt(telefones.length)],
         email: emails[random.nextInt(emails.length)],
+        colors: cores[random.nextInt(cores.length)],
       );
       userList.add(usuario);
     }

@@ -13,6 +13,7 @@ class HomeApp extends StatefulWidget {
 class _HomeAppState extends State<HomeApp> {
   List<Contato> user = [];
   ContatoService contatoService = ContatoService();
+  //var serviceLocator = GetIt.I();
   @override
   void initState() {
     super.initState();
