@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:treinamento_flutter/contact.dart';
+import 'package:treinamento_flutter/contactdetails.dart';
 import 'package:treinamento_flutter/contatoservice.dart';
 import 'package:treinamento_flutter/service_locator.dart';
 import 'models/contato.dart';
@@ -14,8 +14,7 @@ class HomeApp extends StatefulWidget {
 class _HomeAppState extends State<HomeApp> {
   var servico = servicelocator<ContatoService>();
   List<Contato> user = [];
- 
-  
+
   @override
   void initState() {
     super.initState();
@@ -28,28 +27,33 @@ class _HomeAppState extends State<HomeApp> {
       body: Container(
         child: ListView.builder(
           itemCount: user.length,
-          itemBuilder: (context, index) {
-            Divider(
-              color: Colors.black,
-            );
-            return InkWell(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ContactModal(user, index)));
-              },
-              child: ListTile(
-                leading: CircleAvatar(
-                  child: Text(
-                    user[index].inicial,
-                  ),
-                  radius: 24,
-                  // backgroundColor: Colors.grey[400],
+          itemBuilder: (context, posicao) {
+            var contato = user[posicao];
+            return Column(
+              children: [
+                Divider(
+                  color: Colors.black,
                 ),
-                title: Text(user[index].nome),
-                subtitle: Text(user[index].telefone),
-              ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ContactModal(contato)));
+                  },
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      child: Text(
+                        user[posicao].inicial,
+                      ),
+                      radius: 24,
+                      // backgroundColor: Colors.grey[400],
+                    ),
+                    title: Text(contato.nome),
+                    subtitle: Text(contato.telefone),
+                  ),
+                ),
+              ],
             );
           },
         ),

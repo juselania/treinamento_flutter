@@ -3,9 +3,9 @@ import 'models/contato.dart';
 import 'package:intl/intl.dart';
 
 class ContactModal extends StatelessWidget {
-  final List<Contato> user;
-  final int index;
-  ContactModal(this.user, this.index);
+  final Contato user;
+  
+  ContactModal(this.user);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class ContactModal extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.grey[100],
         elevation: 0,
-        title: Text(user[index].nome, style: TextStyle(color: Colors.black)),
+        title: Text(user.nome, style: TextStyle(color: Colors.black)),
       ),
       body: Center(
         child: Container(
@@ -28,7 +28,7 @@ class ContactModal extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Text(user[index].nome, style: TextStyle(fontSize: 20)),
+              Text(user.nome, style: TextStyle(fontSize: 20)),
               SizedBox(
                 height: 20,
               ),
@@ -48,11 +48,11 @@ class ContactModal extends StatelessWidget {
                             children: [
                               ListTile(
                                 title: Text('Estado | Mobile'),
-                                subtitle: Text(user[index].telefone),
+                                subtitle: Text(user.telefone),
                               ),
                               ListTile(
                                 title: Text('E-mail'),
-                                subtitle: Text(user[index].email),
+                                subtitle: Text(user.email),
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
@@ -70,12 +70,12 @@ class ContactModal extends StatelessWidget {
                               ListTile(
                                 title: Text('Nascimento'),
                                 subtitle: Text(DateFormat('d MM y')
-                                    .format(user[index].nascimento)),
+                                    .format(user.nascimento)),
                               ),
                               ListTile(
                                 title: Text('Peso'),
                                 subtitle:
-                                    Text(user[index].peso.toString() + ' Kg'),
+                                    Text(user.peso.toString() + ' Kg'),
                               ),
                             ],
                           ),
