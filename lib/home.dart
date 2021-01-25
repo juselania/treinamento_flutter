@@ -12,14 +12,14 @@ class HomeApp extends StatefulWidget {
 }
 
 class _HomeAppState extends State<HomeApp> {
-  var produto = servicelocator<Contato>();
+  var servico = servicelocator<ContatoService>();
   List<Contato> user = [];
-  ContatoService contatoService = ContatoService();
-  //var serviceLocator = GetIt.I();
+ 
+  
   @override
   void initState() {
     super.initState();
-    user = contatoService.getAll();
+    user = servico.getAll();
   }
 
   @override
